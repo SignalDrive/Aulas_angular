@@ -1,0 +1,6 @@
+<input (keyup.enter)="adicionarItem($event)" placeholder="Digite e pressione Enter">
+<ul>
+    @for (item of lista; track $index) {
+        <li>{{ item }}</li>
+    }
+</ul>
