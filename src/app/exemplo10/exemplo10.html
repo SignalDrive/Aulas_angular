@@ -1,0 +1,5 @@
+<input [(ngModel)]="email" placeholder="Digite seu email">
+<button (click)="enviar()">Enviar</button>
+@if (!email.includes('@')){
+  <p>Email inválido</p>
+}

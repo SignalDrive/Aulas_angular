@@ -1,0 +1,31 @@
+<h2>Quiz interativo</h2>
+
+<div *ngIf="!quizFinalizado">
+  <p><strong>Questão {{ indexAtual + 1 }} de {{ perguntas.length }}</strong></p>
+
+  <div>
+    <div [style.width.%]="progresso"></div>
+  </div>
+
+  <h3>{{ perguntaAtual.pergunta }}</h3>
+
+  <label *ngFor="let alternativa of perguntaAtual.alternativas; let i = index">
+    <input type="radio" [name]="'pergunta-' + indexAtual" [value]="alternativa" [(ngModel)]="respostas[indexAtual]" />
+    {{ alternativa }}
+  </label>
+
+  <button type="button" (click)="responder()" [disabled]="!respostas[indexAtual]">
+    {{ indexAtual === perguntas.length - 1 ? 'Finalizar' : 'Próxima' }}
+  </button>
+</div>
+
+<div *ngIf="quizFinalizado">
+  <h3>Resultado</h3>
+  <p>Você acertou {{ pontuacao }} de {{ perguntas.length }} questões.</p>
+  <p>
+    <strong>
+      {{ pontuacao >= 3 ? 'Parabéns! Você foi muito bem!' : 'Continue praticando!' }}
+    </strong>
+  </p>
+  <button type="button" (click)="reiniciarQuiz()">Reiniciar quiz</button>
+</div>

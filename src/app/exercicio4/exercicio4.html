@@ -1,0 +1,26 @@
+<h2>Carrinho de Compras</h2>
+
+<div>
+  <input type="text" [(ngModel)]="novoItem" placeholder="Nome do item" />
+  <button type="button" (click)="adicionarItem()">Adicionar</button>
+</div>
+
+<ul>
+  <li *ngFor="let item of itens">
+    <span *ngIf="!item.editando">{{ item.nome }}</span>
+
+    <input
+      *ngIf="item.editando"
+      type="text"
+      [(ngModel)]="item.nome"
+      placeholder="Editar item"
+      (keyup.enter)="salvarEdicao(item)"
+    />
+
+    <button type="button" *ngIf="!item.editando" (click)="iniciarEdicao(item)">Editar</button>
+    <button type="button" *ngIf="item.editando" (click)="salvarEdicao(item)">Salvar</button>
+    <button type="button" (click)="removerItem(item.id)">Remover</button>
+  </li>
+</ul>
+
+

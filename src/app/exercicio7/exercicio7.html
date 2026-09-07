@@ -1,0 +1,23 @@
+<h2>Tabela com filtro e ordenação</h2>
+
+<input type="text" [(ngModel)]="filtroNome" placeholder="Filtrar por nome" />
+
+<button type="button" (click)="ordenarPorNome()">Ordenar por nome</button>
+<button type="button" (click)="ordenarPorIdade()">Ordenar por idade</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Cidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pessoa of pessoasFiltradas">
+      <td>{{ pessoa.nome }}</td>
+      <td>{{ pessoa.idade }}</td>
+      <td>{{ pessoa.cidade }}</td>
+    </tr>
+  </tbody>
+</table>

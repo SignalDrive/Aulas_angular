@@ -2,7 +2,8 @@
     @for (item of frutas; track $index) {
         <li (click)="selecionada = item">{{item}}</li>
     }
+</ul>
     @if (selecionada) {
         <p>Você escolheu : {{selecionada}}</p>
     }
-</ul>
+
