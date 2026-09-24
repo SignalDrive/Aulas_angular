@@ -1,0 +1,6 @@
+<input type="text" placeholder="Nome do produto" [(ngModel)]="novoItem.nome">
+<input type="number" placeholder="Quantidade" [(ngModel)]="novoItem.quantidade">
+<input type="number" placeholder="Preço" [(ngModel)]="novoItem.precos">
+
+<button (click)="adicionarItem(novoItem)">Adicionar ao Carrinho</button>
+<button (click) = "removerItem(novoItem.nome)">Remover do Carrinho</button>
