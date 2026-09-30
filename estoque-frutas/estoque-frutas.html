@@ -1,0 +1,22 @@
+<h2>Estoque de Frutas</h2>
+
+<ol>
+  <li *ngFor="let fruta of Frutas; track fruta.id; let i = index">
+    {{ fruta.Nome }} - {{ fruta.Quantidade }} - {{ fruta.Valor }}
+
+    <button type="button" (click)="removerFruta(i)">Remover</button>
+  </li>
+</ol>
+
+<div>
+  <label for="nomeFruta">Nome</label>
+  <input id="nomeFruta" type="text" [(ngModel)]="novaFruta.Nome" placeholder="Nome da fruta" />
+
+  <label for="quantidadeFruta">Quantidade</label>
+  <input id="quantidadeFruta" type="number" [(ngModel)]="novaFruta.Quantidade" min="1" />
+
+  <label for="valorFruta">Valor</label>
+  <input id="valorFruta" type="number" [(ngModel)]="novaFruta.Valor" min="0" step="0.01" />
+
+  <button type="button" (click)="adicionarFruta()">Adicionar</button>
+</div>
