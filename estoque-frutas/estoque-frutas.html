@@ -1,7 +1,7 @@
 <h2>Estoque de Frutas</h2>
 
 <ol>
-  <li *ngFor="let fruta of Frutas; track fruta.id; let i = index">
+  <li *ngFor="let fruta of Frutas; let i = index">
     {{ fruta.Nome }} - {{ fruta.Quantidade }} - {{ fruta.Valor }}
 
     <button type="button" (click)="removerFruta(i)">Remover</button>
