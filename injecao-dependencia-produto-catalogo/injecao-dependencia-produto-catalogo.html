@@ -1,11 +1,17 @@
 <div>
   <h3> Produtos</h3>
 
+  <div>
+    <input type="text" [(ngModel)]="novoProduto" placeholder="Digite o nome do produto" />
+    <button type="button" (click)="adicionarProduto()">Adicionar</button>
+  </div>
+
   <ul>
     @for (p of produtos; track $index){
       <li>
        <span> {{$index + 1}}</span>
       {{p}}
+      <button type="button" (click)="removerProduto($index)">Remover</button>
       </li>
     }
     @empty {
