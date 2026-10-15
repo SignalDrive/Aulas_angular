@@ -1,0 +1,17 @@
+<h3>Lista de tarefas</h3>
+
+<div>
+    <input type="text" [(ngModel)] = "novaTarefa.nome" placeholder="Digite a tarefa"/>
+    <button type="button"(click)="adicionarTarefa()">adicionar tarefa</button>
+</div>
+<div>
+    <ul>
+    @for(l of lista; track $index){
+        <li>
+            <span> {{$index + 1}}</span>
+            {{ l.nome }}
+        </li>
+        
+    }
+    </ul>
+</div>
